@@ -1,0 +1,18 @@
+[Desktop Entry]
+Comment[en_US]=A program to convert Guild Wars 2 Music Autohotkey Scripts to bash scripts.
+Comment=A program to convert Guild Wars 2 Music Autohotkey Scripts to bash scripts.
+Exec=ahktobash
+GenericName[en_US]=Autohotkey to Bash Scripts, with ydotool
+GenericName=Autohotkey to Bash Scripts, with ydotool
+Keywords=java;autohotkey;script
+MimeType=
+Name[en_US]=AhkToBash
+Name=AhkToBash
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-Flatpak=com.github.ykshek.AhkToBash
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,34 @@
+id: com.github.ykshek.AhkToBash
+runtime: org.freedesktop.Platform
+runtime-version: 24.08
+sdk: org.freedesktop.Sdk
+command: ahktobash
+separate-locales: false
+sdk-extensions: [org.freedesktop.Sdk.Extension.openjdk21]
+finish-args: [
+    --socket=x11,
+    --env=PATH=/usr/bin:/app/bin/:app/jre/bin,
+    --filesystem=home:ro,
+    --filesystem=home/output
+]
+modules:
+-   name: openjdk
+    buildsystem: simple
+    build-commands: [/usr/lib/sdk/openjdk21/install.sh]
+-   name: ahktobash
+    buildsystem: simple
+    build-commands: [
+        "install -D ahktobash /app/bin/ahktobash",
+        "install -D ahktobash-jar-with-dependencies.jar /app/share/ahktobash-jar-with-dependencies.jar",
+        "install -Dm644 com.github.ykshek.AhkToBash.desktop /app/share/applications/com.github.ykshek.AhkToBash.desktop"
+    ]
+    sources:
+    -   type: script
+        dest-filename: ahktobash
+        commands: ["exec /app/jre/bin/java -jar -Djava.awt.headless=false /app/share/ahktobash-jar-with-dependencies.jar"]
+    -   type: file
+        url: https://github.com/ykshek/AhkToBash/raw/refs/heads/master/target/ahktobash-jar-with-dependencies.jar
+        sha256: af4c632df7d729d8a8622891648ea8bb0c70c81950de31edabcf5264bda9e65f
+        dest-filename: ahktobash-jar-with-dependencies.jar
+    -   type: file
+        path: com.github.ykshek.AhkToBash.desktop
