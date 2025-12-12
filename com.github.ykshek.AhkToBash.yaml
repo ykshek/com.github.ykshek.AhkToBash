@@ -27,7 +27,7 @@ modules:
         dest-filename: ahktobash
         commands: ["exec /app/jre/bin/java -jar -Djava.awt.headless=false /app/share/ahktobash-jar-with-dependencies.jar"]
     -   type: file
-        url: https://maven.pkg.github.com/ykshek/AhkToBash/com/github/ykshek/ahktobash/ahktobash/0.0.13/ahktobash-0.0.13-jar-with-dependencies.jar
+        url: https://github.com/ykshek/AhkToBash/releases/download/v0.1.0/ahktobash-0.1.0-jar-with-dependencies.jar
         sha256: ...
         dest-filename: ahktobash-jar-with-dependencies.jar
     -   type: file
